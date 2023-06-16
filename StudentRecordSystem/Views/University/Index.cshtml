@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Figtree:wght@300;600&amp;display=swap'>
+    <link rel="stylesheet" href="~/css/card.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+    <section class="articles">
+        @foreach (var obj in Model)
+        {
+            <article>
+                <div class="article-wrapper">
+                    @if (User.IsInRole(Roles.Role_Admin))
+                    {
+                        <a asp-controller="University" asp-action="Edit" asp-route-id="@obj.Id">
+                            <figure>
+                                <img src="@obj.ImageUrl" alt="" />
+                            </figure>
+                        </a>
+                    }
+                    else
+                    {
+                        <figure>
+                            <img src="@obj.ImageUrl" alt="" />
+                        </figure>
+                    }
+                    <div class="article-body">
+                        <h2>@obj.Name</h2>
+                        <p>
+                            @obj.Description
+                        </p>
+                        <p><i class="bi bi-geo-alt-fill"></i> @obj.Location</p>
+                        <p><i class="bi bi-pin-map-fill"></i> @obj.City</p>
+                        <p><i class="bi bi-calendar3-event"></i> @obj.EstablishmentDate</p>
+                    </div>
+                    @if (User.IsInRole(Roles.Role_Admin))
+                    {
+                        <a asp-controller="University" asp-action="Delete" asp-route-id="@obj.Id" class="delete-button">
+                            <button type="button" class="btn btn-danger">Delete</button>
+                        </a>
+                    }
+                </div>
+            </article>
+        }
+    </section>
+    @if (User.IsInRole(Roles.Role_Admin))
+    {
+        <div style="position:fixed; right:25px;bottom:70px" class="text-white">
+            <a asp-controller="University" asp-action="Create" class="btn btn-success"> <i class="bi bi-plus-circle"></i> Add New </a>
+        </div>
+    }
+
+</body>
+</html>

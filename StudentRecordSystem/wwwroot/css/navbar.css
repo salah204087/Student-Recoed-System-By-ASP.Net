@@ -1,0 +1,25 @@
+﻿.navbar {
+    background-color: #f8f9fa; /* Set the background color of the navbar */
+    padding: 0.5rem; /* Add some padding to the navbar */
+}
+
+.navbar-brand {
+    font-weight: bold; /* Make the navbar brand text bold */
+}
+
+.navbar-nav .nav-item .nav-link {
+    transition: color 0.3s; /* Add transition for smooth hover effect */
+}
+
+    .navbar-nav .nav-item .nav-link:hover {
+        color: #007bff; /* Change the color of the link on hover */
+    }
+
+.dropdown-menu {
+    background-color: #f8f9fa; /* Set the background color of the dropdown menu */
+}
+
+.dropdown-item:hover {
+    background-color: #007bff; /* Change the background color of the dropdown item on hover */
+    color: #fff; /* Change the text color of the dropdown item on hover */
+}

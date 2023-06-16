@@ -1,0 +1,48 @@
+﻿@if (TempData["success"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "progressBar": true,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "closeButton": true,
+            "closeHtml": "<button><i class='fa fa-times'></i></button>",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "toastClass": "toast-success" // Set the toastClass to "toast-success" for light green color
+        };
+
+        toastr.success('@TempData["success"]');
+    </script>
+}
+@if (TempData["error"] != null)
+{
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script type="text/javascript">
+        toastr.options = {
+            "positionClass": "toast-top-right",
+            "progressBar": true,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "closeButton": true,
+            "closeHtml": "<button><i class='fa fa-times'></i></button>",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut",
+            "toastClass": "toast-error" // Set the toastClass to "toast-error" for light green color
+        };
+
+        toastr.error('@TempData["success"]');
+    </script>
+}

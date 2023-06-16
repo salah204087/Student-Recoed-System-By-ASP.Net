@@ -1,0 +1,144 @@
+﻿@using StudentRecordSystem.Models.ViewModel;
+@model StudentVM
+
+@{
+    ViewData["Title"] = "Delete Confirmation";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card shadow-lg" style="width: 600px; margin: 0 auto;">
+                <h1 class="card-header bg-secondary text-white text-center">Delete Student Confirmation</h1>
+                <div class="card-body">
+                    <form asp-action="Delete" class="mt-4">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="Student.Name" class="control-label">Name:</label>
+                            <input asp-for="Student.Name" class="form-control" disabled />
+                            <span asp-validation-for="Student.Name" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.Age" class="control-label">Age:</label>
+                            <input asp-for="Student.Age" class="form-control" type="number" disabled />
+                            <span asp-validation-for="Student.Age" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.Email" class="control-label">E-Mail</label>
+                            <input asp-for="Student.Email" class="form-control" type="email" disabled />
+                            <span asp-validation-for="Student.Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.PhoneNumber" class="control-label">Phone Number:</label>
+                            <input asp-for="Student.PhoneNumber" class="form-control" disabled />
+                            <span asp-validation-for="Student.PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.Gender" class="control-label">Gender:</label>
+                            <select asp-for="Student.Gender" class="form-control" disabled>
+                                <option value="">Select</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                            <span asp-validation-for="Student.Gender" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.EducationType" class="control-label">Education Type:</label>
+                            <select asp-for="Student.EducationType" class="form-control" id="educationType" disabled>
+                                <option value="">Select</option>
+                                <option value="academic">academic</option>
+                                <option value="Pre-university">Pre-university</option>
+                            </select>
+                            <span asp-validation-for="Student.EducationType" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="universityGroup">
+                            <label asp-for="Student.UniversityId" class="control-label">University:</label>
+                            <select asp-for="Student.UniversityId" asp-items="@Model.UniversityList" class="form-control " disabled>
+                                <option disabled selected>--Select--</option>
+                            </select>
+                            <span asp-validation-for="Student.UniversityId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="facultyGroup">
+                            <label asp-for="Student.FacultyId" class="control-label">Faculty:</label>
+                            <select asp-for="Student.FacultyId" asp-items="@Model.FacultyList" class="form-control " disabled>
+                                <option disabled selected>--Select--</option>
+                            </select>
+                            <span asp-validation-for="Student.FacultyId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group" id="schoolGroup">
+                            <label asp-for="Student.SchoolId" class="control-label">School:</label>
+                            <select asp-for="Student.SchoolId" asp-items="@Model.SchoolList" class="form-control " disabled>
+                                <option disabled selected>--Select--</option>
+                            </select>
+                            <span asp-validation-for="Student.SchoolId" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.BirthDate" class="control-label">Birth Date:</label>
+                            <input asp-for="Student.BirthDate" class="form-control" type="date" disabled />
+                            <span asp-validation-for="Student.BirthDate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.Address" class="control-label">Address:</label>
+                            <input asp-for="Student.Address" class="form-control" disabled />
+                            <span asp-validation-for="Student.Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.City" class="control-label">City:</label>
+                            <input asp-for="Student.City" class="form-control" disabled />
+                            <span asp-validation-for="Student.City" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Student.PostalCode" class="control-label">Postal code:</label>
+                            <input asp-for="Student.PostalCode" class="form-control" disabled />
+                            <span asp-validation-for="Student.PostalCode" class="text-danger"></span>
+                        </div>
+                        <div class="form-group text-center mt-3">
+                            <form asp-action="Delete">
+                                <input type="hidden" asp-for="Student.Id" />
+                                <input type="submit" value="Confirm" class="btn btn-danger float-right" />
+                            </form>
+                            <a class="btn btn-secondary ml-2" asp-action="Index">Show All</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        // Initially hide the University, Faculty, and School fields
+        $("#universityGroup").hide();
+        $("#facultyGroup").hide();
+        $("#schoolGroup").hide();
+
+        // Check if Education Type already has a selected value on page load
+        var selectedEducationType = $("#educationType").val();
+        showRelatedFields(selectedEducationType);
+
+        // Listen for changes in the Education Type dropdown
+        $("#educationType").change(function () {
+            var selectedOption = $(this).val();
+            showRelatedFields(selectedOption);
+        });
+
+        // Function to show/hide related fields based on the selected option
+        function showRelatedFields(selectedOption) {
+            if (selectedOption === "academic") {
+                $("#universityGroup").show();
+                $("#facultyGroup").show();
+                $("#schoolGroup").hide();
+            } else if (selectedOption === "Pre-university") {
+                $("#universityGroup").hide();
+                $("#facultyGroup").hide();
+                $("#schoolGroup").show();
+            } else {
+                $("#universityGroup").hide();
+                $("#facultyGroup").hide();
+                $("#schoolGroup").hide();
+            }
+        }
+    });
+</script>
