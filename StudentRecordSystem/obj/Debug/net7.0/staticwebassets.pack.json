@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\StudentRecordSystem.bundle.scp.css"
     },
     {
+      "Id": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\css\\analysis.css",
+      "PackagePath": "staticwebassets\\css\\analysis.css"
+    },
+    {
       "Id": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\css\\card.css",
       "PackagePath": "staticwebassets\\css\\card.css"
     },
@@ -23,6 +27,10 @@
     {
       "Id": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\js\\analysis.js",
+      "PackagePath": "staticwebassets\\js\\analysis.js"
     },
     {
       "Id": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\js\\site.js",

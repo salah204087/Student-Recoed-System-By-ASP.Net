@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WAo+PtUEJhbkw8UHmWw4O1ekgTEjrXBAMQ5PhBkPCuM=",
+  "Hash": "6szQQyTIelAuQu14d0uMcXRWA2YDtEr5oo7SnrI7PLU=",
   "Source": "StudentRecordSystem",
   "BasePath": "_content/StudentRecordSystem",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\StudentRecordSystem.bundle.scp.css"
     },
     {
+      "Identity": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\css\\analysis.css",
+      "SourceId": "StudentRecordSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\",
+      "BasePath": "_content/StudentRecordSystem",
+      "RelativePath": "css/analysis.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\analysis.css"
+    },
+    {
       "Identity": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\css\\card.css",
       "SourceId": "StudentRecordSystem",
       "SourceType": "Discovered",
@@ -1154,6 +1171,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\js\\analysis.js",
+      "SourceId": "StudentRecordSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\",
+      "BasePath": "_content/StudentRecordSystem",
+      "RelativePath": "js/analysis.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\analysis.js"
     },
     {
       "Identity": "D:\\projects\\ASP.NET\\StudentRecordSystem\\StudentRecordSystem\\wwwroot\\js\\site.js",
